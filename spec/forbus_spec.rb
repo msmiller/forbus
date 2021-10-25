@@ -13,6 +13,7 @@ RSpec.describe Forbus do
   end
 
   it "sets up keys" do
+    setup_redis
     expect( Forbus.ecosystem_key_root ).to eq( 'forbus' )
     expect( Forbus.rpc_key('ackoop') ).to eq( 'forbus:rpc:ackoop' )
   end

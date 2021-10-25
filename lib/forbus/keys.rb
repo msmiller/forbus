@@ -1,3 +1,11 @@
+#!/usr/bin/ruby
+# @Author: msmiller
+# @Date:   2021-10-25 15:16:10
+# @Last Modified by:   msmiller
+# @Last Modified time: 2021-10-25 15:55:14
+#
+# Copyright (c) Sharp Stone Codewerks / Mark S. Miller
+
 # frozen_string_literal: true
 
 module Forbus
@@ -6,10 +14,6 @@ module Forbus
 
   def self.ecosystem_key_root
     "forbus"
-  end
-
-  def self.site_key_root
-    "#{ecosystem_key_root}:site:1"
   end
 
   def self.imprints_key_root
@@ -26,8 +30,24 @@ module Forbus
 
   ### Redis Key Definitions
 
+  def self.site_key(site_id=1)
+    "#{ecosystem_key_root}:site:#{site_id}"
+  end
+
   def self.rpc_key(token)
     "#{rpc_key_root}:#{token}"
   end
 
+  def self.channel_imprint_key(channel_id)
+    "#{imprints_key_root}:channels:#{channel_id}"
+  end
+
+  def self.actor_imprint_key(actor_id)
+    "#{imprints_key_root}:actors:#{actor_id}"
+  end
+
+  def self.marker_key(channel_id)
+    "#{markers_key_root}:#{channel_id}"
+  end
+  
 end
