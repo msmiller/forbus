@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "forbus"
+require "redis"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,4 +13,15 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+end
+
+def setup_redis
+  $redis = Redis.new
+  begin
+    $redis.ping
+  rescue
+    raise StandardError, 'redis-server needs to be running'
+  end
+  $redis.flushall
+  $redis.flushdb
 end
