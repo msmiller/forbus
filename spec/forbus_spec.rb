@@ -11,4 +11,10 @@ RSpec.describe Forbus do
     key_count = $redis.keys("*")
     expect( key_count.length ).to eq( 0 )
   end
+
+  it "sets up keys" do
+    expect( Forbus.ecosystem_key_root ).to eq( 'forbus' )
+    expect( Forbus.rpc_key('ackoop') ).to eq( 'forbus:rpc:ackoop' )
+  end
+
 end
