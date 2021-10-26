@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:14:40
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 12:26:25
+# @Last Modified time: 2021-10-26 12:48:26
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -27,7 +27,8 @@ module Forbus
 
     @local_redis = nil
     @remote_redis = nil
-    attr_accessor :local_redis, :remote_redis
+    @list_size = 1000
+    attr_accessor :local_redis, :remote_redis, :list_size
 
     def initialize(local_redis_url=nil, remote_redis_url=nil)
 

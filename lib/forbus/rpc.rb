@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:25:00
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 12:31:06
+# @Last Modified time: 2021-10-26 12:43:21
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -25,8 +25,9 @@ module Forbus
     end
 
     # Payload should include a 'type' or 'kind' as needed
-    def make_rpc_request(payload)
-      # push onto local bus as command
+    def make_rpc_request(payload_hash)
+      # payload_hash[:request_id] = SecureRandom.alphanumeric(20)
+      # push_ecobus_command(payload_hash)
     end
 
   end
