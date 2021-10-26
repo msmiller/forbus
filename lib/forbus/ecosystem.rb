@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:25:00
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 10:44:21
+# @Last Modified time: 2021-10-26 12:37:51
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -12,12 +12,14 @@ module Forbus
 
   class FORbus
 
-    # Set local Redis ACL for remote instance to connect with
-    def grant_local_access(user, pass, channel_id)
+    def start_ecobus_monitor(callback)
     end
 
-    # Create Redis connection to remote server
-    def connect_to_remote(url, user, pass)
+    def stop_ecobus_monitor
+    end
+
+    def push_ecobus_command(payload_hash)
+      @local_redis.lpush Forbus.bus_key, payload_hash.to_json
     end
 
   end

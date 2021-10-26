@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:14:40
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 10:45:15
+# @Last Modified time: 2021-10-26 12:26:25
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -14,7 +14,7 @@ require_relative "forbus/site"
 require_relative "forbus/channel"
 require_relative "forbus/actor"
 require_relative "forbus/rpc"
-require_relative "forbus/redis_bus"
+require_relative "forbus/redis_mgr"
 require_relative "forbus/ecosystem"
 
 require 'securerandom'

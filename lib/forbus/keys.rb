@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:16:10
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 10:48:24
+# @Last Modified time: 2021-10-26 12:20:39
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -32,6 +32,10 @@ module Forbus
 
   def self.site_key(site_id=1)
     "#{ecosystem_key_root}:site:#{site_id}"
+  end
+
+  def self.bus_key
+    "#{rpc_key_root}:bus"
   end
 
   def self.rpc_key(token)
