@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:14:40
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-25 15:47:52
+# @Last Modified time: 2021-10-25 18:54:59
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -13,6 +13,8 @@ require_relative "forbus/keys"
 require_relative "forbus/site"
 require_relative "forbus/channel"
 require_relative "forbus/actor"
+require_relative "forbus/redis_bus"
+require_relative "forbus/ecosystem"
 
 require 'securerandom'
 require 'json'
