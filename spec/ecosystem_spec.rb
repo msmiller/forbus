@@ -35,7 +35,6 @@ RSpec.describe 'Ecosystem' do
   end
 
   it "saves channel markers" do
-
     @fb.set_marker( 123, 456 )
     @fb.set_marker( 246, 135 )
 
@@ -48,5 +47,21 @@ RSpec.describe 'Ecosystem' do
     expect( all_markers[246] ).to eq( 135 )
   end
 
+  it "saves rpc response" do
+    @response_hash =  { a: 1, b: 2, c: { x: 111, y: 222 }}
+    @response_id = "xyzzy"
+    @fb.push_rpc_response( @response_id, @response_hash)
+
+    result = $redis.get( Forbus.rpc_key(@response_id) )
+    expect( result ).to eq( @response_hash.to_json )
+  end
+
+  it "generates random user-pass" do
+    userpass = Forbus.create_random_user_pass
+
+    expect( userpass.length ).to eq( 2 )
+    expect( userpass[:username].length ).to eq( 20 )
+    expect( userpass[:password].length ).to eq( 20 )
+  end
 
 end

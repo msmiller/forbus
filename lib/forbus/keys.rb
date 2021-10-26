@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:16:10
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-25 15:55:14
+# @Last Modified time: 2021-10-26 10:22:23
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -49,5 +49,9 @@ module Forbus
   def self.marker_key(channel_id)
     "#{markers_key_root}:#{channel_id}"
   end
-  
+
+  def self.rpc_key(response_id)
+    "#{rpc_key_root}:#{response_id}"
+  end
+
 end
