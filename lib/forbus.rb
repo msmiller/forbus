@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:14:40
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 10:20:42
+# @Last Modified time: 2021-10-26 10:45:15
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -30,6 +30,8 @@ module Forbus
     attr_accessor :local_redis, :remote_redis
 
     def initialize(local_redis_url=nil, remote_redis_url=nil)
+
+      # TODO: Re-do this part once we get to ACL stuff
       if local_redis_url.nil?
         @local_redis = Redis.new
       else
@@ -40,6 +42,7 @@ module Forbus
       else
         @remote_redis = Redis.new(url: remote_redis_url)
       end
+
     end
 
   end

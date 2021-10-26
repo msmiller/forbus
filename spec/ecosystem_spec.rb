@@ -21,7 +21,7 @@ RSpec.describe 'Ecosystem' do
 
     result = $redis.get( Forbus.channel_imprint_key(CHANNEL_ID) )
     expected_result = JSON.parse(result)
-
+  
     expect( expected_result ).to eq( @fb.get_channel_imprint_hash(CHANNEL_ID) )
   end
 
@@ -42,9 +42,12 @@ RSpec.describe 'Ecosystem' do
     expect( @fb.get_marker(246) ).to eq(135)
 
     all_markers = @fb.get_markers_all
-    expect( all_markers.length ).to eq( 2 )
+    expect( all_markers.length ).to eq( 3 ) # 2 channels + lastupdate
     expect( all_markers[123] ).to eq( 456 )
     expect( all_markers[246] ).to eq( 135 )
+
+    lastupdate = @fb.get_marker_lastupdate
+    expect( Date.parse(lastupdate).to_s ).to eq( Date.today.to_s )
   end
 
   it "saves rpc response" do

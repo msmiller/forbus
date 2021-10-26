@@ -3,6 +3,7 @@
 require "forbus"
 require "redis"
 require "awesome_print"
+require "time"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

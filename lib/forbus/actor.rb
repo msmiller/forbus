@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:25:00
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-25 15:51:16
+# @Last Modified time: 2021-10-26 11:00:23
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -14,6 +14,7 @@ module Forbus
 
     # REQUIRES a channel_id param
     def set_actor_imprint_hash(h)
+      h[:lastupdate] = Time.now
       @local_redis.set( Forbus.actor_imprint_key(h[:actor_id] || h['actor_id']), h.to_json )
     end
 
