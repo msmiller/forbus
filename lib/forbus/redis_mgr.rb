@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:25:00
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 12:32:40
+# @Last Modified time: 2021-11-07 10:45:06
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -14,6 +14,10 @@ module Forbus
   # Helper to create random user/pass for Redis access
   def self.create_random_user_pass
     { username: SecureRandom.alphanumeric(20), password: SecureRandom.alphanumeric(20) }
+  end
+
+  def self.create_random_token
+    SecureRandom.alphanumeric(20)
   end
 
   class FORbus

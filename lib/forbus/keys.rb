@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:16:10
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 12:20:39
+# @Last Modified time: 2021-11-07 10:43:17
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -34,8 +34,9 @@ module Forbus
     "#{ecosystem_key_root}:site:#{site_id}"
   end
 
-  def self.bus_key
-    "#{rpc_key_root}:bus"
+  # Token is the handle for each subscriber
+  def self.bus_key(token)
+    "#{ecosystem_key_root}:bus:#{token}"
   end
 
   def self.rpc_key(token)

@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:14:40
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-10-26 12:48:26
+# @Last Modified time: 2021-11-07 10:59:37
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -43,7 +43,8 @@ module Forbus
       else
         @remote_redis = Redis.new(url: remote_redis_url)
       end
-
+      @list_size = 1000
+      
     end
 
   end

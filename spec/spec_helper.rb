@@ -33,5 +33,4 @@ CHANNEL_ID = 123
 CHANNEL_HASH = { name: "Channel One", channel_id: CHANNEL_ID, slug: 'channel_one' }
 ACTOR_ID = 456
 ACTOR_HASH = { name: "John Smith", actor_id: ACTOR_ID, slug: 'johnsmith', klass: 'User' }
-
-
+COMMAND_HASH = { command: 'print', message: 'Hello World from FORBus !'}

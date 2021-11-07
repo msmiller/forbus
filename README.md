@@ -2,12 +2,16 @@
 
 ![](forbus.png)
 
-
+<div style="font-size: 3rem;">
 **F**ederation **O**ver **R**edis **BUS**
+</div>
 
 </div></p>
 
-# Forbus
+
+<p><center><i style="color:firebrick;">This is currently a Work In Progress</i></center></p>
+
+# FORBus
 
 FORbus is a simple, easy to deploy and easy to provision message and cache bus to allow sites on the same (or similar) frameworks to federate **BIDIRECTIONALLY**.
 Most other Federation solutions are essentially just "RSS On Steroids", FORbus allows users on subscribing sites to interact with the publisher site almost as if they were members.
