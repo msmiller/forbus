@@ -62,6 +62,17 @@ RSpec.describe 'Ecobus' do
       expect( userpass[:password].length ).to eq( 20 )
     end
 
+    it "can clear a bus" do
+      @subscriber_token = Forbus.create_random_token
+      @fb.push_ecobus_command(@subscriber_token, COMMAND_HASH)
+      buslen = @fb.ecobus_length(@subscriber_token)
+      expect( buslen ).to eq( 1 )
+
+      @fb.clear_channel(@subscriber_token)
+      buslen = @fb.ecobus_length(@subscriber_token)
+      expect( buslen ).to eq( 0 )
+    end
+
   end
 
 end

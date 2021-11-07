@@ -2,7 +2,7 @@
 # @Author: msmiller
 # @Date:   2021-10-25 15:25:00
 # @Last Modified by:   msmiller
-# @Last Modified time: 2021-11-07 10:45:06
+# @Last Modified time: 2021-11-07 14:24:51
 #
 # Copyright (c) Sharp Stone Codewerks / Mark S. Miller
 
@@ -38,6 +38,15 @@ module Forbus
     # @param pass
     # @param channel_id The id of the channel on the local app
     def set_bus_channel_acl(user, pass, channel_id)
+    end
+
+    #### UTIL FUNCTIONS ####
+
+    # Clears a LIST being used as a bus on the local service
+    #
+    # @param bus_token The token for the bus to clear
+    def clear_channel(bus_token)
+      @local_redis.ltrim(Forbus.bus_key(bus_token), 1, -1)
     end
 
   end
