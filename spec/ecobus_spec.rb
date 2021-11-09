@@ -68,7 +68,7 @@ RSpec.describe 'Ecobus' do
       buslen = @fb.ecobus_length(@subscriber_token)
       expect( buslen ).to eq( 1 )
 
-      @fb.clear_channel(@subscriber_token)
+      @fb.clear_bus_channel(@subscriber_token)
       buslen = @fb.ecobus_length(@subscriber_token)
       expect( buslen ).to eq( 0 )
     end
