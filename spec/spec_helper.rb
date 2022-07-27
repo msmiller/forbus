@@ -2,7 +2,7 @@
 
 require "forbus"
 require "redis"
-require "awesome_print"
+require "amazing_print"
 require "time"
 
 RSpec.configure do |config|

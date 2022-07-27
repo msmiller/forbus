@@ -9,11 +9,10 @@
 # frozen_string_literal: true
 
 module Forbus
-
   ### Redis Key Root Definitions
 
   def self.ecosystem_key_root
-    "forbus"
+    'forbus'
   end
 
   def self.imprints_key_root
@@ -39,10 +38,6 @@ module Forbus
     "#{ecosystem_key_root}:bus:#{token}"
   end
 
-  def self.rpc_key(token)
-    "#{rpc_key_root}:#{token}"
-  end
-
   def self.channel_imprint_key(channel_id)
     "#{imprints_key_root}:channels:#{channel_id}"
   end
@@ -58,5 +53,4 @@ module Forbus
   def self.rpc_key(response_id)
     "#{rpc_key_root}:#{response_id}"
   end
-
 end
