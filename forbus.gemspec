@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = "forbus"
   spec.version       = Forbus::VERSION
   spec.authors       = ["msmiller"]
-  spec.email         = ["mark.s.miller@gmail.com"]
+  spec.email         = ["mmiller@sharpstonecopdewerks.com"]
 
   spec.summary       = "Federation Over Redis BUS."
   spec.description   = "Federation Over Redis BUS."
