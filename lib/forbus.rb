@@ -16,12 +16,14 @@ require_relative 'forbus/actor'
 require_relative 'forbus/rpc'
 require_relative 'forbus/redis_mgr'
 require_relative 'forbus/ecosystem'
+require_relative 'forbus/api'
 
 require 'securerandom'
 require 'json'
 
 module Forbus
   class Error < StandardError; end
+  class ForbusError < StandardError; end
 
   class FORbus
     @local_redis = nil
@@ -40,3 +42,4 @@ end
 
 class FORbus < Forbus::FORbus
 end
+

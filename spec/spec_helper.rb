@@ -29,6 +29,7 @@ def setup_redis
 end
 
 SITE_HASH = { name: "Site One", site_id: 1, site_url: 'http://localhost:3000' }
+SITE_HASH_2 = { name: "Site Two", site_id: 2, site_url: 'http://127.0.0.1' }
 CHANNEL_ID = 123
 CHANNEL_HASH = { name: "Channel One", channel_id: CHANNEL_ID, slug: 'channel_one' }
 ACTOR_ID = 456
