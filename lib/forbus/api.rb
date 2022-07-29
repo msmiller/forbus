@@ -22,7 +22,8 @@ module Forbus
 
   class FORbus
 
-
+    # SITE - get/set info on the owning site
+    #
     # :get => site subscriber get the current site
     # :put => site owner sets site hash
     def site(method:, data: {})
@@ -31,6 +32,26 @@ module Forbus
         get_site_hash
       when :put
         set_site_hash( data )
+      else
+        raise ForbusError, 'Illegal method'
+      end
+    end
+
+    def channel(method:, data: {})
+      case method
+      when :get
+      when :put
+      when :poke # tell subscriber that something has changed with the channel
+      else
+        raise ForbusError, 'Illegal method'
+      end
+    end
+
+    def channel_marker(method:, data: {})
+      case method
+      when :get
+      when :put
+      when :poke # tell subscriber that there's new content
       else
         raise ForbusError, 'Illegal method'
       end
