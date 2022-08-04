@@ -13,12 +13,12 @@ module Forbus
   class FORbus
 
     # REQUIRES a channel_id param
-    def set_channel_imprint_hash(h)
+    def push_channel_imprint_hash(h)
       h[:lastupdate] = Time.now
       @local_redis.set( Forbus.channel_imprint_key(h[:channel_id] || h['channel_id']), h.to_json )
     end
 
-    def get_channel_imprint_hash(channel_id)
+    def pull_channel_imprint_hash(channel_id)
       json_hash = @remote_redis.get( Forbus.channel_imprint_key(channel_id) )
       JSON.parse(json_hash)
     end

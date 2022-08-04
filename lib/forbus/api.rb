@@ -37,10 +37,12 @@ module Forbus
       end
     end
 
-    def channel(method:, data: {})
+    def channel(method:, channel_id:, data: {})
       case method
       when :get
+        pull_channel_imprint_hash(channel_id)
       when :put
+        push_channel_imprint_hash(channel_id, data)
       when :poke # tell subscriber that something has changed with the channel
       else
         raise ForbusError, 'Illegal method'
